@@ -1,0 +1,94 @@
+{% extends "layout.php" %}
+
+{% block content %}
+<div class= "container">
+    
+    <div class="jumbotron" >
+        <h1 class="display-4">Bienvenido</h1>
+        <p class="lead">Aquí encontraras aplicaciones y páginas que te ayudaran a aprender y a entender</p>
+    </div>
+
+    <div class="jumbotron" >
+        <h1 class="display-4">Convertidor de PDF de Adobe</h1>
+        <p class="lead">Este es un conversor de pdf a otros formatos gratuito de Adobe.</p>
+        <hr class="my-4">
+        <p>Esta pagina te permitira pasar los archivos PDF a Word, PPT, Excel, JPG y viceversa. el link que esta debajo te permitira acceder
+            a el converitdor de PDF a Word u en la parte superior hay un boton desplegable el cual recive el nombre de convertir,
+            y al darle click podras acceder a las otras opciones convertir.
+        </p>
+        <a class="btn btn-danger btn-lg" href="https://www.adobe.com/la/acrobat/online/pdf-to-word.html?promoid=XXTQH1JQ&mv=other" 
+        target="_blank" role="button">Click aqui</a>
+    </div>
+
+    <div class="jumbotron" >
+        <h1 class="display-4">Geogebra</h1>
+        <p>GeoGebra es un software matemático interactivo libre para la educación en colegios y universidades.</p>
+        <hr class="my-4">
+        <p>Geogebra es un procesador geométrico y un procesador algebraico, es decir, un compendio de matemática 
+            con software interactivo que reúne geometría, álgebra, estadística y cálculo, por lo que puede ser usado 
+            también en física, proyecciones comerciales, estimaciones de decisión estratégica y otras disciplinas.</p>
+        <a class="btn btn-danger btn-lg" href="https://www.geogebra.org/graphing?lang=es" target="_blank" role="button">GeoGebra</a>
+    </div>
+
+    <div class="jumbotron" >
+        <h1 class="display-4">Symbolab</h1>
+        <p class="lead">Symbolab es un motor de respuesta desarrollado por EqsQuest Ltd. Es un servicio en línea que 
+            calcula soluciones paso a paso a problemas matemáticos en una variedad de materias.</p>
+        <hr class="my-4">
+        <p>Symbolab proporciona soluciones automatizadas paso a paso para los temas algebraicos, trigonométricos y de 
+            cálculo que abarcan desde la escuela intermedia hasta la universidad. Symbolab ofrece una gran cantidad de
+            calculadoras inteligentes que incluyen: ecuaciones, ecuaciones simultáneas, desigualdades, integrales, 
+            derivadas, límites, línea tangente, ecuaciones trigonométricas, funciones y más.</p>
+        <a class="btn btn-danger btn-lg" href="https://es.symbolab.com" target="_blank" role="button">Symbolab</a>
+    </div>
+
+    <div class="jumbotron" >
+        <h1 class="display-4">Formulación química</h1>
+        <p class="lead">Formulación química pretende ser una guía y ayuda para aprender a nombrar correctamente los diferentes
+             compuestos existentes en sus diversas nomenclaturas, así como el desarrollo de las fórmulas químicas.</p>
+        <hr class="my-4">
+        <p>la pagina de Formulación quimica ayuda a la representación de los elementos que forman parte de un compuesto. 
+            Además de la representación se encuentra la proporción de los elementos que intervienen así como en número de 
+            átomos que forman la molécula.</p>
+        <a class="btn btn-danger btn-lg" href="https://www.formulacionquimica.com" target="_blank" role="button">Formulación química</a>
+    </div>
+
+    <div class="jumbotron" >
+        <h1 class="display-4">Piktochart</h1>
+        <p class="lead">Piktochart es una herramienta en línea que permite crear infografías gratuitamente.</p>
+        <hr class="my-4">
+        <p>Piktochart ofrece plantillas predefinidas en las cuales es posible agregar y dar formato al texto (tamaño, tipo, color, 
+            alineación, etc.), agregar contenidos multimedia como imágenes y videos, entre otras posibilidades, para que el creador 
+            de la infografía pueda ordenar la presentación de su tema.</p>
+        <a class="btn btn-danger btn-lg" href="https://piktochart.com" target="_blank" role="button">Piktochart</a>
+    </div>
+
+    <div class="jumbotron" >
+        <h1 class="display-4">Canva</h1>
+        <p class="lead">Canva es un software y sitio web de herramientas de diseño gráfico simplificado.</p>
+        <hr class="my-4">
+        <p>Canva utiliza un formato de arrastrar y soltar y proporciona acceso a más de 60 millones de fotografías y 5 millones de vectores,
+                gráficos y fuentes. Es utilizado del mismo modo por 'no diseñadores', como por profesionales del sector. Sus herramientas se
+                pueden utilizar tanto para el diseño web como para los medios de impresión y gráficos.</p>
+        <a class="btn btn-danger btn-lg" href="https://www.canva.com/en_gb" target="_blank" role="button">Canva</a>
+    </div>
+
+    <div class="jumbotron" >
+        <h1 class="display-4">Amautas</h1>
+        <p class="lead">Amanautas es un sitio web donde encontraras cursos y talleres sobre ciencia.</p>
+        <hr class="my-4">
+        <p>Amautas es una comunidad científica online donde comparten, a través de cursos y talleres, los temas más apasionantes de la ciencia. 
+            Cultivan y disfrutan del conocimiento, es necesario aclarar que esta plataforma esta mas enfocada en el descubrimiento de nuevos
+            temas por lo que si estas interesado en aprender mas, esta pagina te encantara.</p>
+        <a class="btn btn-danger btn-lg" href="https://amautas.com" target="_blank" role="button">Amautas</a>
+    </div>
+
+    <div class="jumbotron" >
+        <h1 class="display-4">Tesis digital</h1>
+        <p class="lead">Tesis digitales es un sitio web para buscar informacion</p>
+        <hr class="my-4">
+        <p>Tesis digitales es un sitio web para buscar apartir de palabras clave u otras variable, informacion sobre un tema especifico</p>
+        <a class="btn btn-danger btn-lg" href="http://digitalacademico.ajusco.upn.mx:8080/jspui/simple-search?location=%2F&query=&rpp=10&sort_by=score&order=desc&filter_field_1=dateIssued&filter_type_1=equals&filter_value_1=%5B2010+TO+2020%5D" target="_blank" role="button">Tesis digital</a>
+    </div>
+</div>
+{% endblock %}
