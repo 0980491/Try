@@ -1,0 +1,32 @@
+body{
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #161616);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #161616); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: darkgrey;
+}   
+
+.carousel-inner {
+    overflow: visible;
+    max-height: 700px;
+    position: relative;
+}
+
+.jumbotron {
+    margin-top: 2rem;
+    padding: 4rem 2rem;
+    margin-bottom: 2rem;
+    border-radius: .3rem;  
+    background-color: #212529;
+    color: #fff;
+  }
+
+.iframe{
+    margin-top: 10px;
+}
+
+@media only screen and (max-widht: 1000px) {
+    .navbar {
+        background-color: rbga(0,0,0,0,8);
+        position: fixed;
+    }
+}
