@@ -1,11 +1,20 @@
-from flask import Flask, render_template
+from flask import Flask, redirect, render_template, request, url_for
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('first_page.html')
+    return redirect(url_for('login'))
 
+@app.route('/login', methods=['GET','POST'])
+def login():
+    if request.method=='POST':
+        if (request.form['username']=="GNF_Apuntes") and (request.form['password']=="29080"):
+            return redirect(url_for('home'))
+        else:
+            return render_template("first_page.html")
+    else:
+        return render_template("first_page.html")
 
 @app.route('/first_page')
 def home():
