@@ -1,4 +1,6 @@
+from multiprocessing import context
 from flask import Flask, redirect, render_template, request, url_for
+import smtplib, ssl
 
 app = Flask(__name__)
 
@@ -15,6 +17,23 @@ def login():
             return render_template("first_page.html")
     else:
         return render_template("first_page.html")
+
+@app.route('/form', methods=['POST'])
+def form():
+    
+    Name = request.form.get('nombre')
+    Grado = request.form.get('grado')
+    Email = request.form.get('correo')
+    Message = request.form.get('mensaje')
+    if Name != None or Email != None or Message != None:
+        message = ("Hola soy " + Name + ", de grado " + Grado +"\n" +"Mi correo es: " + Email +"\n" + Message)
+        context = ssl.create_default_context()
+        with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
+            server.login("banco.de.ovas.gnf@gmail.com", "bfkbeqnvjgdsofpf")
+            server.sendmail(Email, "banco.de.ovas.gnf@gmail.com", message)
+        return redirect(url_for('home'))
+    else:
+        return redirect(url_for('contact'))
 
 @app.route('/first_page')
 def home():

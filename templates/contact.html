@@ -7,11 +7,13 @@
 </head>
 <body>
 <div class= "container">
-    <form action="/contact" method="post">
-        <h2>contactanos</h2>
+    <h2>contactanos</h2>
+    <form action="/form" method="POST">
         <input type="text" name="nombre" placeholder="Nombre" required/>
         <input type="email" name="correo" placeholder="Correo de contacto" required/>
-        <textarea name="mensaje" placeholder="Escriba aqui su mensaje" required></textarea>
-        <input type="submit" name="send">
+        <input type="number" name="grado" placeholder="# de grado" required/>
+        <textarea type="text" name="mensaje" placeholder="Escriba aqui su mensaje" required></textarea>
+        <button class="btn btn-danger" type="submit" name="send">Enviar</button>
     </form>
+    <a class="btn btn-danger" href="/first_page" role="button">Regresar</a>
 </div>
