@@ -209,6 +209,10 @@ def elevenepanol():
 def elevenfilosofia():
     return render_template('11filosofia.html')
 
+@app.route('/11/Metodologia')
+def elevenmeto():
+    return render_template('11metodologia.html')
+
 
 if __name__ == "__main__":
     app.run(debug=True)
