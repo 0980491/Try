@@ -1,19 +1,52 @@
-<style>
-</style>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Contacto</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Apuntes GNF</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'><link rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"><link rel="stylesheet">
 </head>
 <body>
-<div class= "container">
-    <h2>contactanos</h2>
-    <form action="/form" method="POST">
-        <input type="text" name="nombre" placeholder="Nombre" required/>
-        <input type="email" name="correo" placeholder="Correo de contacto" required/>
-        <input type="number" name="grado" placeholder="# de grado" required/>
-        <textarea type="text" name="mensaje" placeholder="Escriba aqui su mensaje" required></textarea>
-        <button class="btn btn-danger" type="submit" name="send">Enviar</button>
-    </form>
-    <a class="btn btn-danger" href="/first_page" role="button">Regresar</a>
+
+	<div class="section">
+		<div class="container">
+			<div class="row full-height justify-content-center">
+				<div class="col-12 text-center align-self-center py-5">
+					<div class="section pb-5 pt-5 pt-sm-2 text-center">
+			          	<label for="reg-log"></label>
+						<div class="card-3d-wrap mx-auto">
+							<div class="card-3d-wrapper">
+								<div class="card-front">
+									<div class="center-wrap">
+                                            <h4>Contanctanos</h4>
+                                        <form action="/form" method="POST">
+                                            <div class="section text-center">
+                                                
+                                                <input type="text" name="nombre" placeholder="Nombre" class="form-style" required/>
+                                                
+                                                <input type="email" name="correo" placeholder="Correo de contacto" class="form-style" required/>
+                                                
+                                                <input type="number" name="grado" placeholder="# de grado" class="form-style" required/>
+                                                
+                                                <textarea type="text" name="mensaje" placeholder="Escriba aqui su mensaje" class="form-style" required></textarea>
+                                            
+                                                <button class="btn mt-4" type="submit">Enviar</button>
+                                                <a class="btn btn-danger" href="/first_page" role="button">Regresar</a>
+                                        </form>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          </div>
+      </div>                                            
 </div>
