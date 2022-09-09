@@ -60,6 +60,11 @@ def teninformatica():
     return render_template('informatica.html')
 
 
+@app.route('/Prae')
+def Prae():
+    return render_template('prae.html')
+
+
 @app.route('/6')
 def six():
     return render_template('6.html')
