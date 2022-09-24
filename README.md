@@ -11,8 +11,7 @@ recuarda que la guia esta junto al siguiente video de youtube:
    4. [Tipos de container en la pagina](#Tipos-de-container-en-la-pagina)
 2. [Creacion de categorias](#Creacion-de-categorias)
    1. [Templates](#Templates)
-   2. [App.py](#App.py)
-   3. [Inplementacion](#Inplementacion)
+   2. [App py](#App-py)
 3. [Barra de navegacion](#Barra-de-navegacion)
 
 ## Publicacion nuevas OVA
@@ -123,7 +122,8 @@ que cuenta con multiples achivos que lo componen, se implementa de la siguiente 
 <p class="lead">Nombre o formato del archivo</p>
 <iframe src="Link del archivo" width="640" height="480"></iframe>
 ```
-###Tipos-de-container-en-la-pagina
+###Tipos de container en la pagina
+
 los containers con los que trabajamos anteriormente eran containers para OVA, pero no son los unicos que se utilizan dentro de la pagina, esto depende el la aplicacion que se le de, y cada uno tiene su propia configuracion, organizacion y conjunto de partes
 
 *Container de Subcategorias
@@ -185,7 +185,7 @@ Para la creacion de categorias nuevas se necesita agregar una nueva Template y a
 
 la template ya esta lista para que empieces a agregar OVA, recuarda que tienes que agregarlo entre `{% block content %}` y `{% endblock %}`
 
-### App.py
+### App py
 
 *Ahora para que puedas utilizar la template dentro de la pagina, tienes que primero agregarla a `App.py` para esto primero entra este archivo .py, ahora genera una ruta con el siguiente formato
 
