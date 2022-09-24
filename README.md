@@ -8,12 +8,12 @@ recuarda que la guia esta junto al siguiente video de youtube:
    1. [Container](#Container)
    2. [Partes del container](#Partes-del-container)
    3. [OVA Compuesto](#OVA-Compuesto)
+   4. [Tipos de container en la pagina](#Tipos-de-container-en-la-pagina)
 2. [Creacion de categorias](#Creacion-de-categorias)
    1. [Templates](#Templates)
    2. [App.py](#App.py)
    3. [Inplementacion](#Inplementacion)
 3. [Barra de navegacion](#Barra-de-navegacion)
-4. [Formatos](#Formatos)
 
 ## Publicacion nuevas OVA
 
@@ -45,7 +45,7 @@ recuarda que la guia esta junto al siguiente video de youtube:
     color: #fff;
   }
 ```
-<img src="https://cdn.discordapp.com/attachments/827534398064295948/1023277440111497216/unknown.png" height="585">
+<img src="https://cdn.discordapp.com/attachments/827534398064295948/1023277440111497216/unknown.png">
 
 
 ### Partes del container
@@ -123,15 +123,175 @@ que cuenta con multiples achivos que lo componen, se implementa de la siguiente 
 <p class="lead">Nombre o formato del archivo</p>
 <iframe src="Link del archivo" width="640" height="480"></iframe>
 ```
+###Tipos-de-container-en-la-pagina
+los containers con los que trabajamos anteriormente eran containers para OVA, pero no son los unicos que se utilizan dentro de la pagina, esto depende el la aplicacion que se le de, y cada uno tiene su propia configuracion, organizacion y conjunto de partes
+
+*Container de Subcategorias
+
+Este container se utiliza para que, por ejemplo, dentro de los cursos se encuentren las asignaturas y puedan acceder a las OVA de esa asignatura y grado espesifico
+
+```ruby
+<div class="jumbotron">
+        <h1 class="display-4">Nombre de la asignatura o subcategoria</h1>
+        <p class="lead">Descripcion de la asignatura o subcategoria</p>
+        <hr class="my-4">
+        <p>haz click aqui para ver todas actividades relacionadas con esta materia</p>
+        <a class="btn btn-danger btn-lg" href="ruta de la template a mostrar como aparece en App.py" role="button">Click aqui</a>
+</div>
+
+```
+
+*Container de Apps y paginas recomendadas
+
+Este container se utiliza dentro de la categoria de Apps y paginas recomendadas, y contienen informacion y el hipervinculo de una aplicacion o pagina que los estudiantes pueden usar dentro de su proceso educativo
+
+```ruby
+<div class="jumbotron" >
+        <h1 class="display-4">Nombre de la aplicacion o pagina</h1>
+        <p class="lead">descripcion corta de la aplicacion o pagina</p>
+        <hr class="my-4">
+        <p>Descripcion de la aplicacion o pagina</p>
+        <a class="btn btn-danger btn-lg" href="Link de la aplicacion o pagina" 
+        target="_blank" role="button">Click aqui</a>
+    </div>
+```
+
+*Container de Bienvenida
+
+Estos se utilizan en la mayoria de categorias, y contienen caracteristicas de la categoria
+
+```ruby
+    <div class="jumbotron" >
+        <h1 class="display-4">Bienvenido</h1>
+        <p class="lead">Descripcion de lo que se localiza dentro de la categoria</p>
+    </div>
+```
 
 ## Creacion de categorias
 
+Para la creacion de categorias nuevas se necesita agregar una nueva Template y agregar la ruta a `App.py`
+
 ### Templates
+
+*dentro de `template/` genera un nuevo archivo, si la categoria que se quiere agregar hace parte de una categoria mas grande, como por ejemplo un grado, entonces agregaras el grado primero despues la asignatura a la que hace parte y un `.html`, por ejemplo `6musica.html`; dentro de este archivo coloca el siguiente codigo
+
+``` ruby
+{% extends "layout.html" %}
+
+{% block content %}
+
+{% endblock %}
+```
+
+la template ya esta lista para que empieces a agregar OVA, recuarda que tienes que agregarlo entre `{% block content %}` y `{% endblock %}`
 
 ### App.py
 
-### Inplementacion
+*Ahora para que puedas utilizar la template dentro de la pagina, tienes que primero agregarla a `App.py` para esto primero entra este archivo .py, ahora genera una ruta con el siguiente formato
+
+```ruby
+@app.route('')
+def #():
+    return render_template('Nombre.html')
+```
+*para el siguiente ejemplo supondremos que queremos agregar musica a sexto o agregar la categoria de PRAE en la pagina
+
+*entre las `''` de `@app.route('')` coloca / + el nombre con el que va a aparecer y vas a llamar a la template dentro de la pagina, en caso de que sea una subcategoria, coloca primero /nombre de la categoria grande/nombre de la nueva template, recuarda que lo que coloques sera la ruta que usaras para llamar la template desde cualquier otra template dentro de la pagina
+
+```ruby
+@app.route('/6/Musica')
+```
+
+```ruby
+@app.route('/PRAE')
+```
+
+*Remplaza el `#` de `def #():` y en el coloca un nombre alusivo a el grado y asignatura, o la categoria en minuscula
+```ruby
+def sixmusica():
+```
+```ruby
+def prae():
+```
+
+*ahora en `return render_template('Nombre.html')`, entre los `()` coloca el nombre de la template que quieres mostrar
+```ruby
+return render_template('6musica.html')
+```
+```ruby
+return render_template('PRAE.html')
+```
+El resultado seria el siguiente, recuarda que estas rutas en caso de ser parte de una categoria mas grande van en debajo de la ruta de la categoria de la que hacen parte, si son independientes, van debajo de la ruta `'/first_page'`
+
+```ruby
+@app.route('/6/Musica')
+def sixmusica():
+    return render_template('6musica.html')
+```
+```ruby
+@app.route('/PRAE')
+def prae():
+    return render_template('PRAE.html')
+```
 
 ## Barra de navegacion
 
-## Formatos
+<img src="(https://media.discordapp.net/attachments/827534398064295948/1023300555398987829/unknown.png">
+
+*Se pueden agregar hipervinculos a la barra superior para generar o agilizar la entrada a una categoria, la barra de navegacion se encuentra dentro de
+`template/layout.html`
+
+``` ruby
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/first_page">Apuntes GNF</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-   expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/first_page">Home</a>
+                        </li>
+                        <li class="nav-item">
+                                <a class="nav-link" href="/6">6°</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/7">7°</a>
+                        </li>
+                        <li class="nav-item">
+                                <a class="nav-link" href="/8">8°</a>
+                        </li>
+                        <li class="nav-item">
+                                <a class="nav-link" href="/9">9°</a>
+                        </li>
+                        <li class="nav-item">
+                                <a class="nav-link" href="/10">10°</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/11">11°</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Prae">PRAE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/recomendados">Aplicaciones y Paginas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">About</a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+    </nav>
+```
+*Cada vinculo de la barra se encuentra contenido en un `li`
+
+``` ruby
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/Nombre">Texto a mostrar</a>
+</li>
+```
+*Para editarlo en `href` se coloca el link del vinculo que se quiere mostrar, si es una template la que se quiere mostrar se coloca el `/nombre` que se le coloco en `App.py`; y entre los `>` y `<` se coloca el nombre como va a aparecer el vinculo dentro de la barra
+
