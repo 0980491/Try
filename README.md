@@ -122,7 +122,8 @@ que cuenta con multiples achivos que lo componen, se implementa de la siguiente 
 <p class="lead">Nombre o formato del archivo</p>
 <iframe src="Link del archivo" width="640" height="480"></iframe>
 ```
-###Tipos de container en la pagina
+
+### Tipos de container en la pagina
 
 los containers con los que trabajamos anteriormente eran containers para OVA, pero no son los unicos que se utilizan dentro de la pagina, esto depende el la aplicacion que se le de, y cada uno tiene su propia configuracion, organizacion y conjunto de partes
 
