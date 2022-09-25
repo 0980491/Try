@@ -237,7 +237,7 @@ def prae():
 
 ## Barra de navegacion
 
-<img src="(https://media.discordapp.net/attachments/827534398064295948/1023300555398987829/unknown.png">
+<img src="https://media.discordapp.net/attachments/827534398064295948/1023300555398987829/unknown.png">
 
 * Se pueden agregar hipervinculos a la barra superior para generar o agilizar la entrada a una categoria, la barra de navegacion se encuentra dentro de
 `template/layout.html`
