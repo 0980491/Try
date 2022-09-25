@@ -142,7 +142,7 @@ Este container se utiliza para que, por ejemplo, dentro de los cursos se encuent
 
 ```
 
-*Container de Apps y paginas recomendadas
+* Container de Apps y paginas recomendadas
 
 Este container se utiliza dentro de la categoria de Apps y paginas recomendadas, y contienen informacion y el hipervinculo de una aplicacion o pagina que los estudiantes pueden usar dentro de su proceso educativo
 
@@ -157,7 +157,7 @@ Este container se utiliza dentro de la categoria de Apps y paginas recomendadas,
     </div>
 ```
 
-*Container de Bienvenida
+* Container de Bienvenida
 
 Estos se utilizan en la mayoria de categorias, y contienen caracteristicas de la categoria
 
@@ -174,7 +174,7 @@ Para la creacion de categorias nuevas se necesita agregar una nueva Template y a
 
 ### Templates
 
-*dentro de `template/` genera un nuevo archivo, si la categoria que se quiere agregar hace parte de una categoria mas grande, como por ejemplo un grado, entonces agregaras el grado primero despues la asignatura a la que hace parte y un `.html`, por ejemplo `6musica.html`; dentro de este archivo coloca el siguiente codigo
+* Dentro de `template/` genera un nuevo archivo, si la categoria que se quiere agregar hace parte de una categoria mas grande, como por ejemplo un grado, entonces agregaras el grado primero despues la asignatura a la que hace parte y un `.html`, por ejemplo `6musica.html`; dentro de este archivo coloca el siguiente codigo
 
 ``` ruby
 {% extends "layout.html" %}
@@ -195,9 +195,9 @@ la template ya esta lista para que empieces a agregar OVA, recuarda que tienes q
 def #():
     return render_template('Nombre.html')
 ```
-*para el siguiente ejemplo supondremos que queremos agregar musica a sexto o agregar la categoria de PRAE en la pagina
+* Para el siguiente ejemplo supondremos que queremos agregar musica a sexto o agregar la categoria de PRAE en la pagina
 
-*entre las `''` de `@app.route('')` coloca / + el nombre con el que va a aparecer y vas a llamar a la template dentro de la pagina, en caso de que sea una subcategoria, coloca primero /nombre de la categoria grande/nombre de la nueva template, recuarda que lo que coloques sera la ruta que usaras para llamar la template desde cualquier otra template dentro de la pagina
+* Entre las `''` de `@app.route('')` coloca / + el nombre con el que va a aparecer y vas a llamar a la template dentro de la pagina, en caso de que sea una subcategoria, coloca primero /nombre de la categoria grande/nombre de la nueva template, recuarda que lo que coloques sera la ruta que usaras para llamar la template desde cualquier otra template dentro de la pagina
 
 ```ruby
 @app.route('/6/Musica')
@@ -207,7 +207,7 @@ def #():
 @app.route('/PRAE')
 ```
 
-*Remplaza el `#` de `def #():` y en el coloca un nombre alusivo a el grado y asignatura, o la categoria en minuscula
+* Remplaza el `#` de `def #():` y en el coloca un nombre alusivo a el grado y asignatura, o la categoria en minuscula
 ```ruby
 def sixmusica():
 ```
@@ -215,7 +215,7 @@ def sixmusica():
 def prae():
 ```
 
-*ahora en `return render_template('Nombre.html')`, entre los `()` coloca el nombre de la template que quieres mostrar
+* ahora en `return render_template('Nombre.html')`, entre los `()` coloca el nombre de la template que quieres mostrar
 ```ruby
 return render_template('6musica.html')
 ```
@@ -239,7 +239,7 @@ def prae():
 
 <img src="(https://media.discordapp.net/attachments/827534398064295948/1023300555398987829/unknown.png">
 
-*Se pueden agregar hipervinculos a la barra superior para generar o agilizar la entrada a una categoria, la barra de navegacion se encuentra dentro de
+* Se pueden agregar hipervinculos a la barra superior para generar o agilizar la entrada a una categoria, la barra de navegacion se encuentra dentro de
 `template/layout.html`
 
 ``` ruby
@@ -286,7 +286,7 @@ def prae():
         </div>
     </nav>
 ```
-*Cada vinculo de la barra se encuentra contenido en un `li`
+* Cada vinculo de la barra se encuentra contenido en un `li`
 
 ``` ruby
 </li>
@@ -294,5 +294,5 @@ def prae():
 <a class="nav-link" href="/Nombre">Texto a mostrar</a>
 </li>
 ```
-*Para editarlo en `href` se coloca el link del vinculo que se quiere mostrar, si es una template la que se quiere mostrar se coloca el `/nombre` que se le coloco en `App.py`; y entre los `>` y `<` se coloca el nombre como va a aparecer el vinculo dentro de la barra
+* Para editarlo en `href` se coloca el link del vinculo que se quiere mostrar, si es una template la que se quiere mostrar se coloca el `/nombre` que se le coloco en `App.py`; y entre los `>` y `<` se coloca el nombre como va a aparecer el vinculo dentro de la barra
 
