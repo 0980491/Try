@@ -59,6 +59,11 @@ def about():
     return render_template('about.html')
 
 
+@app.route('/PRAE')
+def PRAE():
+    return render_template('PRAE.html')
+
+
 @app.route('/Informatica_tecnologia')
 def teninformatica():
     return render_template('informatica.html')
