@@ -289,7 +289,6 @@ def prae():
 * Cada vinculo de la barra se encuentra contenido en un `li`
 
 ``` ruby
-</li>
 <li class="nav-item">
 <a class="nav-link" href="/Nombre">Texto a mostrar</a>
 </li>
