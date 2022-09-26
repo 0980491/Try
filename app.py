@@ -4,9 +4,11 @@ import smtplib, ssl
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def index():
     return redirect(url_for('login'))
+
 
 @app.route('/login', methods=['GET','POST'])
 def login():
@@ -17,6 +19,7 @@ def login():
             return render_template("first_page.html")
     else:
         return render_template("first_page.html")
+
 
 @app.route('/form', methods=['POST'])
 def form():
@@ -34,6 +37,7 @@ def form():
         return redirect(url_for('home'))
     else:
         return redirect(url_for('contact'))
+
 
 @app.route('/first_page')
 def home():
@@ -58,11 +62,6 @@ def about():
 @app.route('/Informatica_tecnologia')
 def teninformatica():
     return render_template('informatica.html')
-
-
-@app.route('/Prae')
-def Prae():
-    return render_template('prae.html')
 
 
 @app.route('/6')
